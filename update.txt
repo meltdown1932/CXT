@@ -1,0 +1,30 @@
+--updateupdate log : v1 first version build 
+v1.1 added events commands 
+v1.1.1 removed minor bugs
+v1.2.1 online data
+v1.2.2 add more command
+v1.2.7 added needed command and fixed function arguments bug
+v1.2.8 fixed bug of loading mod and loading online data
+1.2.9 added anti-error and auto restart when error
+1.2.10 fixed minor override status display
+1.2.11 fixed anti-error blocking loading mod
+1.2.12 fixing minor bug
+1.2.13 make linux can run-able
+1.2.14 fix posix os display glitch
+1.3.0 added program command for running
+and added system for making external module can use without downloading
+1.3.1 change online data
+--/update
+--discord
+https://discord.com/invite/ErDnWDgy9V
+--/discord
+--creadit
+CXT core by:
+Meltdown [developer]
+--supporter--
+gatsura102_(Wolf) |discord| [supporter]
+--/creadit
+--guide
+command that used for see avalible command is "show_command"
+this is online data, now it's still have a error
+--/guide
