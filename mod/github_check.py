@@ -1,2 +1,2 @@
-def __init__ :
-  print("you download this file from github")
+def test() :
+  print("ya done download this mod")
