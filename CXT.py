@@ -3,7 +3,7 @@ made by Meltdown (known as kenjung)
 version 2.0.0
 Copyright © 2023 C.X.T.
 """
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 if __name__ == "__main__" :
   import sys,os,importlib.util,importlib,time,traceback,inspect,json
   os.system("echo \033]0;CXT2\007")
@@ -176,7 +176,7 @@ if __name__ == "__main__" :
   sys.path = ori
   #end
 
-  if is_manual and __name__ == "__main__":
+  if is_manual :
 
     for i in range(5) :
       print(f"loading attempt [{i+1}/5]")
