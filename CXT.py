@@ -220,7 +220,7 @@ if __name__ == "__main__" :
           if outdate == True :
             os.startfile(path_of_file+"/CXT/updater.py")
           else :
-            print("update update is unavalibie")
+            print("update is unavalibie")
         else :print("CXT currently offline")
       else :
         CXT.exec(command=_input)
