@@ -1,9 +1,9 @@
 """
 made by Meltdown (known as kenjung)
-version 2.0.0
+version 2.0.2
 Copyright © 2023 C.X.T.
 """
-__version__ = "2.0.1"
+__version__ = "2.0.2"
 if __name__ == "__main__" :
   import sys,os,importlib.util,importlib,time,traceback,inspect,json
   os.system("echo \033]0;CXT2\007")
@@ -197,10 +197,10 @@ if __name__ == "__main__" :
       print(online_data["icon"])
     print("CXT2\ntype \"discord\" \"update_log\" \"credit\" \"copyright\" for information")
     if __version__ != online_data["current version"] :
-      print(f"CXT is out of date\n your current version {__version__}\nnew avalible version",online_data["current version"],"\ntype \"for update\"")
-      outdate=False
-    else :
+      print(f"CXT is out of date\n your current version {__version__}\nnew avalible version",online_data["current version"],"\ntype \"update\"for update")
       outdate=True
+    else :
+      outdate=False
     while 1 :
       _input =input("X>")
       if _input.startswith("discord") :
