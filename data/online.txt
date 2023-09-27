@@ -15,6 +15,9 @@ v1.2.8 fixed bug of loading mod and loading online data
 and added system for making external module can use without downloading
 1.3.1 change online data
 --/update
+--uptodate
+2.0.0
+--/uptodate
 --discord
 https://discord.com/invite/ErDnWDgy9V
 --/discord
