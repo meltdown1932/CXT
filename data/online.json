@@ -1,6 +1,6 @@
 {
   "update" : "update log : v1 first version build\nv1.1 added events commands \nv1.1.1 removed minor bugs\nv1.2.1 online data\nv1.2.2 add more command\nv1.2.7 added needed command and fixed function arguments bug\nv1.2.8 fixed bug of loading mod and loading online data\n1.2.9 added anti-error and auto restart when error\n1.2.10 fixed minor override status display\n1.2.11 fixed anti-error blocking loading mod\n1.2.12 fixing minor bug\n1.2.13 make linux can run-able\n1.2.14 fix posix os display glitch\n1.3.0 added program command for running and added system for making external module can use without downloading\n1.3.1 change online data",
-  "current version" : "2.0.2",
+  "current version" : "2.0.3",
   "discord":"https://discord.com/invite/ErDnWDgy9V",
   "credit":"CXT core by:\nMeltdown [developer]\n\n--supporter--\ngatsura102_(Wolf) [discord]\nAarinx [discord]",
   "copyright":"made by Meltdown (known as kenjung)\nversion 2.0.0\nCopyright © 2023 C.X.T.",
