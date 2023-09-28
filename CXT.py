@@ -1,9 +1,9 @@
 """
 made by Meltdown (known as kenjung)
-version 2.0.2
+version 2.0.3
 Copyright © 2023 C.X.T.
 """
-__version__ = "2.0.2"
+__version__ = "2.0.3"
 if __name__ == "__main__" :
   import sys,os,importlib.util,importlib,time,traceback,inspect,json
   os.system("echo \033]0;CXT2\007")
@@ -170,9 +170,8 @@ if __name__ == "__main__" :
   internal_module = {}
   ori=sys.path.copy()
   sys.path.insert(0,path_of_file+"/CXT/data/module")
-  requests = importlib.import_module("requests")
-  keyboard = importlib.import_module("requests")
-  mouse = importlib.import_module("requests")
+  for i in os.listdir(path_of_file+"/CXT/data/module") :
+    internal_module[i] = importlib.import_module(i)
   sys.path = ori
   #end
 
@@ -181,7 +180,7 @@ if __name__ == "__main__" :
     for i in range(5) :
       print(f"loading attempt [{i+1}/5]")
       with open(path_of_file+"/cxt/data/cache/internet.txt","w",encoding="utf-8") as f :
-        website = requests.get("https://raw.githubusercontent.com/meltdown1932/CXT/main/data/online.json",timeout = 5)
+        website = internal_module["requests"].get("https://raw.githubusercontent.com/meltdown1932/CXT/main/data/online.json",timeout = 5)
         if website.status_code == 200 :
           f.write(website.text)
           break
@@ -219,6 +218,7 @@ if __name__ == "__main__" :
         if not CXT_offline :
           if outdate == True :
             os.startfile(path_of_file+"/CXT/updater.py")
+            sys.exit(1)
           else :
             print("update is unavalibie")
         else :print("CXT currently offline")
