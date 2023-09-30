@@ -1,9 +1,9 @@
 """
 made by Meltdown (known as kenjung)
-version 2.0.3
+version 2.0.4
 Copyright © 2023 C.X.T.
 """
-__version__ = "2.0.3"
+__version__ = "2.0.4"
 if __name__ == "__main__" :
   import sys,os,importlib.util,importlib,time,traceback,inspect,json
   os.system("echo \033]0;CXT2\007")
@@ -167,11 +167,10 @@ if __name__ == "__main__" :
     is_manual = True
 
   #module
-  internal_module = {}
   ori=sys.path.copy()
   sys.path.insert(0,path_of_file+"/CXT/data/module")
   for i in os.listdir(path_of_file+"/CXT/data/module") :
-    internal_module[i] = importlib.import_module(i)
+    sys.modules[i] = importlib.import_module(i)
   sys.path = ori
   #end
 
@@ -180,7 +179,11 @@ if __name__ == "__main__" :
     for i in range(5) :
       print(f"loading attempt [{i+1}/5]")
       with open(path_of_file+"/cxt/data/cache/internet.txt","w",encoding="utf-8") as f :
-        website = internal_module["requests"].get("https://raw.githubusercontent.com/meltdown1932/CXT/main/data/online.json",timeout = 5)
+        try :
+          website = sys.modules["requests"].get("https://raw.githubusercontent.com/meltdown1932/CXT/main/data/online.json",timeout = 5)
+        except ConnectionError :
+          print("connection error")
+          break
         if website.status_code == 200 :
           f.write(website.text)
           break
@@ -217,8 +220,16 @@ if __name__ == "__main__" :
       elif _input.startswith("update") :
         if not CXT_offline :
           if outdate == True :
-            os.startfile(path_of_file+"/CXT/updater.py")
-            sys.exit(1)
+            if int(__version__.replace(".","")) <= int(online_data["cvn"]["limit update version"].replace(".","")) :
+              cant_update = True
+            else :
+              cant_update = False
+            if cant_update :
+              print("can't be update due version have updater updating")
+              print("get update at {}".format(online_data["cvn"]["google drive"]))
+            else :
+              os.startfile(path_of_file+"/CXT/updater.py")
+              sys.exit(1)
           else :
             print("update is unavalibie")
         else :print("CXT currently offline")
