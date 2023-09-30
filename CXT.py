@@ -1,9 +1,9 @@
 """
 made by Meltdown (known as kenjung)
-version 2.0.4
+version 2.0.6
 Copyright © 2023 C.X.T.
 """
-__version__ = "2.0.5"
+__version__ = "2.0.6"
 if __name__ == "__main__" :
   import sys,os,importlib.util,importlib,time,traceback,inspect,json
   os.system("echo \033]0;CXT2\007")
@@ -220,10 +220,7 @@ if __name__ == "__main__" :
       elif _input.startswith("update") :
         if not CXT_offline :
           if outdate == True :
-            if int(__version__.replace(".","")) <= int(online_data["cvn"]["limit update version"].replace(".","")) :
-              cant_update = True
-            else :
-              cant_update = False
+            cant_update = not(all(int(x)<y for x,y in zip(__version__.split("."),online_data["cvn"]["limit update version list"])))
             if cant_update :
               print("can't be update due version have updater updating")
               print("get update at {}".format(online_data["cvn"]["google drive"]))
